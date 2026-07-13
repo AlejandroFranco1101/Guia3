@@ -8,15 +8,10 @@ class SecondActivity : AppCompatActivity() {
     lateinit var btnRegresar: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // 1. Referencia al archivo layout
         setContentView(R.layout.activity_second)
-        // 2. Referencia al boton
         btnRegresar = findViewById(R.id.btnRegresar)
-        // 3. Registro del observador
         lifecycle.addObserver(MyLifeCycleObserver("SecondActivity"))
-        // 4. Listener del boton
         btnRegresar.setOnClickListener{
-            // 5. Uso de un intent explicito para iniciar una nueva Activity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
