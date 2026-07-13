@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnAbrir: Button
+    private lateinit var btnAbrirThird: Button
     private lateinit var btnIncrementar: Button
     private lateinit var tvContador: TextView
     private var contador: Int = 0
@@ -18,11 +19,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnAbrir = findViewById(R.id.btnAbrir)
+        btnAbrirThird = findViewById(R.id.btnAbrirThird)
         btnIncrementar = findViewById(R.id.btnIncrementar)
         tvContador = findViewById(R.id.tvContador)
         lifecycle.addObserver(MyLifeCycleObserver("MainActivity"))
         btnAbrir.setOnClickListener{
             val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+        btnAbrirThird.setOnClickListener{
+            val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)
         }
         btnIncrementar.setOnClickListener{
