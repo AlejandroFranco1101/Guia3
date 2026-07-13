@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
             contador++
             tvContador.text = "Valor contador: $contador"
         }
+        if (savedInstanceState != null) {
+            contador = savedInstanceState.getInt("CONTADOR")
+            tvContador.text = "Valor contador: $contador"
+        }
 
         mostrarToast("onCreate")
     }
@@ -61,6 +65,10 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         mostrarToast("onDestroy")
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("CONTADOR", contador)
     }
 
     private fun mostrarToast(
