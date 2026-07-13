@@ -48,5 +48,5 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:text="Valor contador: 0"
+        android:text="Valor contador: 0" />
 </LinearLayout>
